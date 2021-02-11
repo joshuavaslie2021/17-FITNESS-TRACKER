@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/workout-tracker',
+  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -23,11 +23,6 @@ mongoose.connect(
     useFindAndModify: false
   }
 );
-
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
 
 // routes
 require("./routes/api.js")(app);
