@@ -1,10 +1,8 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/workouts", {
+mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
   useFindAndModify: false
 });
 
@@ -136,3 +134,11 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+
+  //   db.Workout.create(workoutSeed)
+//   .then(dbWorkout => {
+//     console.log(dbWorkout);
+//   })
+//   .catch(({ message }) => {
+//     console.log(message);
+//   });
